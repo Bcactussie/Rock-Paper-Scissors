@@ -16,4 +16,10 @@ function getComputerChoice() {
     return randomNumb;
 }
 
+function selectPlayer (){ // Prompt choice for the player
+let playerSelection = prompt("Choose: Rock, Paper, Scissors ");
+return playerSelection.toLowerCase(); // lowercase the return value 
+}
+
+console.log (selectPlayer());
 console.log( getComputerChoice())
