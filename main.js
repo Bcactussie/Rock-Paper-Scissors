@@ -21,7 +21,7 @@ function selectPlayer (){ // Prompt choice for the player
     return playerSelection.toLowerCase();
     }
 
- const playerSelection = selectPlayer;
+ const playerSelection = selectPlayer();
  const computerSelection = getComputerChoice();  
  
 let computerScore = 0;
@@ -51,6 +51,14 @@ else if  (((playerSelection === "rock") && computerSelection === "scissors"  )) 
 }
 }
 
+console.log (playerSelection);
+console.log (computerSelection);
+console.log (playRound(playerSelection, computerSelection));
+
+
+
+
+/* 
 function score() { for (let i = 0; i < 5; i++) {  
    console.log (playRound(selectPlayer(), getComputerChoice()));
 }
@@ -68,3 +76,4 @@ else {
 }
 
 console.log (score());
+*/ 
