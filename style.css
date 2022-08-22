@@ -3,7 +3,7 @@
 }
 
 .main {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,4 +145,11 @@ h2 {
               inset 0 0 1.3rem #bc13fe; 
   }
 
- 
+ .footer {
+    text-align: center;
+    color: #eaeaea;
+ }
+
+ .footer a{
+    color: #fff;
+ }
