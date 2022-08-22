@@ -11,15 +11,19 @@
 }
 
 h1 {
-    color: #474747;
+    color: #eaeaea;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.0);
 }
 p {
-    color: #474747;
-}s
+    color:  #eaeaea;
+    background-color: rgba(255, 255, 255, 0.0); 
+}
+
 h2 {
-    color: #474747;
+    color: #fff;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.0);
 }
 
 .button-row {
@@ -34,7 +38,7 @@ h2 {
     margin: 25px;
     text-decoration: none;
     border-radius: 10px;
-    color: #474747;
+    color: #eaeaea;;
     border-radius: 2rem;
     border-style: solid;
     cursor: pointer;
@@ -100,6 +104,7 @@ h2 {
     text-align: center;
     padding: 0 30px 30px;
     visibility: hidden;
+    color: #eaeaea;
    
   }
  .open-popup {
@@ -118,7 +123,7 @@ h2 {
     margin: 25px;
     text-decoration: none;
     border-radius: 10px;
-    color: #474747;
+    color: #eaeaea;
     border-radius: 2rem;
     border-style: solid;
     cursor: pointer;
@@ -139,3 +144,5 @@ h2 {
               0 0 2.8rem #bc13fe,
               inset 0 0 1.3rem #bc13fe; 
   }
+
+ 
