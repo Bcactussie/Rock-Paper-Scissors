@@ -11,24 +11,131 @@
 }
 
 h1 {
-    color: #fff;
+    color: #474747;
+    text-align: center;
+}
+p {
+    color: #474747;
+}s
+h2 {
+    color: #474747;
+    text-align: center;
 }
 
 .button-row {
     gap: 20px;
 }
 
+.button-row {
+    background-color: rgba(255, 255, 255, 0.0);
+}
 .button-row button {
-    background-color: #fff;
     padding: 10px;
     margin: 25px;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
-    box-shadow: 2px 5px #3882f6;
+    color: #474747;
+    border-radius: 2rem;
+    border-style: solid;
+    cursor: pointer;
+
 }
-.button-row button:hover {
-    color: #121212;
-    box-shadow: 2px 5px #3882f6;
+
+.button-row button:focus {
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 5px rgba(57, 255, 20, 0.9); 
     filter: brightness(125%);
+
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #bc13fe,
+              0 0 0.8rem #bc13fe,
+              0 0 2.8rem #bc13fe,
+              inset 0 0 1.3rem #bc13fe; 
+  }
+
+
+#winner {
+    animation: fadeIn 5s;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  
+#winnerActive {
+    animation: fadeIn 5s;
+  }
+  
+  .neon {
+    animation: neon 1s ease infinite;
+    -moz-animation: neon 1s ease infinite;
+    -webkit-animation: neon 1s ease infinite;
+  }
+  
+  @keyframes neon {
+    0%,
+    100% {
+      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+      color: #FED128;
+    }
+    50% {
+      text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+      color: #806914;
+    }
+  }
+  .popup {
+    width: 500px;
+    background: #242424;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    visibility: hidden;
+   
+  }
+ .open-popup {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.4s top 0.4s;
+    top: 50;
+    background-color: #121212;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #474747;
+ } 
+ 
+ .open-popup button {
+    padding: 10px;
+    margin: 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #474747;
+    border-radius: 2rem;
+    border-style: solid;
+    cursor: pointer;
+ }
+
+ .open-popup button:hover {
+    color: #fff;
+    box-shadow: 2px 5px rgba(57, 255, 20, 0.9); 
+    filter: brightness(125%);
+
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #bc13fe,
+              0 0 0.8rem #bc13fe,
+              0 0 2.8rem #bc13fe,
+              inset 0 0 1.3rem #bc13fe; 
+  }

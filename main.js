@@ -1,79 +1,147 @@
 console.log ("Rock, Paper, Scissors Game");
 
-// Computer chooses randomly 
 
+let playerScore = 1;
+let computerScore = 1;
+
+
+// Playerselection 
+const rock = document.querySelector(".rock")
+const paper = document.querySelector(".paper")
+const scissors = document.querySelector(".scissors")
+
+function playerSelection () {
+rock.addEventListener('click', () => {
+   (playRound("rock", getComputerChoice()));
+   console.log (playerScore, computerScore);
+   winner();
+});
+paper.addEventListener('click', () =>  {
+   (playRound("paper", getComputerChoice()));
+   console.log (playerScore, computerScore);
+   winner();
+} );
+scissors.addEventListener('click', () => {
+    (playRound("scissors", getComputerChoice()));
+    console.log (playerScore, computerScore);
+    winner();
+
+});
+}
+// Score winner 
+
+
+const reload = document.querySelector(".reload")
+
+
+function winner () {
+if (playerScore === 6 ) {
+    console.log ("You win, NICE!!!");
+    openPopup();
+    let elSub = document.getElementById('winnerOTtheGame');
+    elSub.textContent = "YOU WON!! NICE.";
+    elSub;
+    reload.addEventListener('click', () => {
+        location.reload(true);
+    });
+
+}
+if (computerScore === 6) {
+    console.log ("Computer wins! NOOOOOOOOO ");
+    openPopup();
+    let elSub = document.getElementById('winnerOTtheGame');
+    elSub.textContent = "You Lost, next time better!";
+    elSub;
+    reload.addEventListener('click', () => {
+        location.reload(true);
+    });
+}
+}
+
+
+
+function openPopup (){
+    let popup = document.getElementById ('popup');
+        popup.classList.add("open-popup");
+        console.log ("test");
+}
+
+
+// Computer selection 
 function getComputerChoice () {
-     let randomNumb = Math.random() * 3;
-     if (randomNumb < 1) {
-        return randomNumb = "rock";
-     }
-     else if (randomNumb < 2) {
-        return randomNumb = "paper";
-     }
-     else {
-        return randomNumb = "scissors";
-     }
-
-}
-
-function selectPlayer (){ // Prompt choice for the player
-    let playerSelection = prompt("Choose: Rock, Paper, Scissors ");
-    return playerSelection.toLowerCase();
+    let randomNumb = Math.random() * 3;
+    if (randomNumb < 1) {
+       return randomNumb = "rock";
+    }
+    else if (randomNumb < 2) {
+       return randomNumb = "paper";
+    }
+    else {
+       return randomNumb = "scissors";
     }
 
- const playerSelection = selectPlayer();
- const computerSelection = getComputerChoice();  
- 
-let computerScore = 0;
- let playerScore = 0;
+}
 
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection === computerSelection)) {
-        return "It's a tie";
+let playerChooses = playerSelection();
+let computerChooses = getComputerChoice;
+
+// compare results 
+function playRound(playerChooses, computerChooses) { 
+
+    if ((playerChooses === computerChooses)) {
+        console.log ("its a tie");
+        let elSub = document.getElementById('winner');
+        elSub.textContent = "It's a tie!";
+        elSub;
+        }
+    else if (((playerChooses === "paper") && computerChooses === "scissors"  )) {
+       console.log ("Computer wins");
+       let elSub = document.getElementById('winner');
+       elSub.textContent = "The winner is the computer";
+       elSub;
+       let elScore = document.getElementById('computerscore');
+       elScore.textContent = computerScore++;
     }
-    else if (((playerSelection === "paper") && computerSelection === "scissors"  )) {
-        return "Player chooses: paper, computer chooses scissors! COMPUTER WINS" + computerScore++;
+    else if (((playerChooses === "rock") && computerChooses === "paper"  )) {
+        console.log ("Computer wins1");
+        let elSub = document.getElementById('winner');
+       elSub.textContent = "The winner is the computer";
+       elSub;
+       let elScore = document.getElementById('computerscore');
+       elScore.textContent = computerScore++;
     }
-    else if (((playerSelection === "rock") && computerSelection === "paper"  )) {
-        return "Player chooses: rock, computer chooses Paper! COMPUTER WINS" + computerScore++;
+    else if (((playerChooses === "scissors") && computerChooses === "rock"  )) {
+       console.log ("Computer wins 2");
+       let elSub = document.getElementById('winner');
+       elSub.textContent = "The winner is the computer";
+       elSub;
+       let elScore = document.getElementById('computerscore');
+       elScore.textContent = computerScore++;
     }
-    else if (((playerSelection === "scissors") && computerSelection === "rock"  )) {
-        return  "Player chooses: scissors, computer chooses rock! COMPUTER WINS" + computerScore++;
-    }
-    else if  (((playerSelection === "scissors") && computerSelection === "paper"  )) {
-        return  "Player chooses: scissors, computer chooses paper! PLAYER WINS" + playerScore++; 
+    else if  (((playerChooses === "scissors") && computerChooses === "paper"  )) {
+        console.log ("Player wins");
+        let elSub = document.getElementById('winner');
+    elSub.textContent = "The winner is the player";
+    elSub;
+    let elScore = document.getElementById('playerscore');
+    elScore.textContent = playerScore++;
 }
-else if  (((playerSelection === "paper") && computerSelection === "rock"  )) {
-    return  "Player chooses: paper, computer chooses rock! PLAYER WINS" + playerScore++; 
+else if  (((playerChooses === "paper") && computerChooses === "rock"  )) {
+    console.log ("Player wins1");
+    let elSub = document.getElementById('winner');
+    elSub.textContent = "The winner is the player";
+    elSub;
+    let elScore = document.getElementById('playerscore');
+    elScore.textContent = playerScore++;
 }
-else if  (((playerSelection === "rock") && computerSelection === "scissors"  )) {
-    return  "Player chooses: rock, computer chooses scissors! PLAYER WINS" + playerScore++; 
+else if  (((playerChooses === "rock") && computerChooses === "scissors"  )) {
+    console.log ("Player wins1");
+    let elSub = document.getElementById('winner');
+    elSub.textContent = "The winner is the player";
+    elSub;
+    let elScore = document.getElementById('playerscore');
+    elScore.textContent = playerScore++;
 }
-}
-
-console.log (playerSelection);
-console.log (computerSelection);
-console.log (playRound(playerSelection, computerSelection));
-
-
-
-
-/* 
-function score() { for (let i = 0; i < 5; i++) {  
-   console.log (playRound(selectPlayer(), getComputerChoice()));
-}
-if (playerScore > computerScore) {
-    return ("Player wins!" + " " + "player score is:" + " " + playerScore + " " + "computer score:" + " " + computerScore);
-}
-else if (playerScore < computerScore) {
-    return ("Computer wins!" + " " + "player score is:" + " " + playerScore + " " + "computer score:" + " " + computerScore);
-}
-else {
-    return ("It's a tie!");
 }
 
 
-}
-
-console.log (score());
-*/ 
